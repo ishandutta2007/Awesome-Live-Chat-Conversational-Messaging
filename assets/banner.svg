@@ -1,0 +1,153 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 360" width="100%" height="100%">
+  <defs>
+    <!-- Background linear gradient -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b0f19" />
+      <stop offset="50%" stop-color="#111827" />
+      <stop offset="100%" stop-color="#1a103c" />
+    </linearGradient>
+
+    <!-- Accent glow gradient -->
+    <linearGradient id="primaryGlow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#6366f1" />
+      <stop offset="50%" stop-color="#8b5cf6" />
+      <stop offset="100%" stop-color="#ec4899" />
+    </linearGradient>
+
+    <!-- Radial ambient glow -->
+    <radialGradient id="ambientOrb" cx="50%" cy="30%" r="50%">
+      <stop offset="0%" stop-color="#6366f1" stop-opacity="0.25" />
+      <stop offset="100%" stop-color="#0b0f19" stop-opacity="0" />
+    </radialGradient>
+
+    <!-- Subtle grid pattern -->
+    <pattern id="grid" width="30" height="30" patternUnits="userSpaceOnUse">
+      <path d="M 30 0 L 0 0 0 30" fill="none" stroke="rgba(255, 255, 255, 0.04)" stroke-width="1" />
+    </pattern>
+
+    <style>
+      .title-text {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        font-weight: 800;
+        font-size: 42px;
+        fill: #ffffff;
+        letter-spacing: -0.5px;
+      }
+      .subtitle-text {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        font-weight: 400;
+        font-size: 19px;
+        fill: #94a3b8;
+      }
+      .badge-text {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        font-weight: 600;
+        font-size: 13px;
+        fill: #e2e8f0;
+      }
+
+      /* Animated floating chat bubbles in the background */
+      @keyframes floatBubble1 {
+        0%, 100% { transform: translateY(0px) scale(1); opacity: 0.25; }
+        50% { transform: translateY(-16px) scale(1.04); opacity: 0.45; }
+      }
+      @keyframes floatBubble2 {
+        0%, 100% { transform: translateY(0px) scale(1); opacity: 0.20; }
+        50% { transform: translateY(18px) scale(1.03); opacity: 0.38; }
+      }
+      @keyframes pulseGlow {
+        0%, 100% { opacity: 0.35; }
+        50% { opacity: 0.75; }
+      }
+      @keyframes streamMotion {
+        0% { stroke-dashoffset: 120; }
+        100% { stroke-dashoffset: 0; }
+      }
+
+      .floating-bg-1 {
+        animation: floatBubble1 7s ease-in-out infinite;
+      }
+      .floating-bg-2 {
+        animation: floatBubble2 9s ease-in-out infinite;
+      }
+      .pulse-effect {
+        animation: pulseGlow 4s ease-in-out infinite;
+      }
+      .stream-line {
+        stroke-dasharray: 8 12;
+        animation: streamMotion 6s linear infinite;
+      }
+    </style>
+  </defs>
+
+  <!-- Background Base -->
+  <rect width="1200" height="360" rx="16" fill="url(#bgGrad)" />
+  <rect width="1200" height="360" fill="url(#grid)" />
+  <circle cx="600" cy="100" r="320" fill="url(#ambientOrb)" class="pulse-effect" />
+
+  <!-- Dynamic / Animated Background Wave Streams (Behind text) -->
+  <g opacity="0.35">
+    <path class="stream-line" d="M 50 70 Q 300 20 600 80 T 1150 60" fill="none" stroke="url(#primaryGlow)" stroke-width="2" />
+    <path class="stream-line" d="M 50 300 Q 350 340 700 280 T 1150 310" fill="none" stroke="#6366f1" stroke-width="2" />
+  </g>
+
+  <!-- Dynamic Background Floating Decorative Chat Elements (Subtle & In Background) -->
+  <g class="floating-bg-1">
+    <rect x="70" y="80" width="130" height="50" rx="12" fill="#1e293b" stroke="#334155" stroke-width="1.5" />
+    <circle cx="95" cy="105" r="5" fill="#10b981" />
+    <rect x="110" y="100" width="65" height="10" rx="5" fill="#475569" />
+  </g>
+  <g class="floating-bg-2">
+    <rect x="990" y="210" width="145" height="54" rx="12" fill="#1e293b" stroke="#334155" stroke-width="1.5" />
+    <circle cx="1015" cy="237" r="6" fill="#6366f1" />
+    <rect x="1030" y="232" width="80" height="10" rx="5" fill="#475569" />
+  </g>
+  <g class="floating-bg-1" style="animation-delay: 2s;">
+    <rect x="1020" y="70" width="110" height="42" rx="10" fill="#1e293b" stroke="#475569" stroke-width="1" />
+    <rect x="1040" y="86" width="70" height="8" rx="4" fill="#64748b" />
+  </g>
+  <g class="floating-bg-2" style="animation-delay: 3s;">
+    <rect x="80" y="230" width="120" height="44" rx="10" fill="#1e293b" stroke="#475569" stroke-width="1" />
+    <rect x="100" y="247" width="75" height="8" rx="4" fill="#64748b" />
+  </g>
+
+  <!-- Main Foreground Content (Centered, clear, prominent) -->
+  <!-- Top Category Pill Tag -->
+  <g transform="translate(425, 48)">
+    <rect width="350" height="34" rx="17" fill="rgba(99, 102, 241, 0.15)" stroke="#6366f1" stroke-width="1" />
+    <circle cx="20" cy="17" r="5" fill="#ec4899" />
+    <text x="35" y="22" class="badge-text" fill="#c7d2fe">⚡ CURATED REPOSITORY OF LIVE CHAT &amp; MESSAGING</text>
+  </g>
+
+  <!-- Title: Foreground, High Contrast -->
+  <text x="600" y="145" text-anchor="middle" class="title-text">
+    Live Chat &amp; Conversational Messaging
+  </text>
+
+  <!-- Subtitle -->
+  <text x="600" y="195" text-anchor="middle" class="subtitle-text">
+    Top Omnichannel Support Platforms, Real-Time Chat Widgets &amp; Open-Source Alternatives
+  </text>
+
+  <!-- Visual Feature Badges / Highlights (Foreground) -->
+  <g transform="translate(230, 240)">
+    <!-- Pill 1: SaaS Leaders -->
+    <g transform="translate(0, 0)">
+      <rect width="210" height="42" rx="21" fill="rgba(30, 41, 59, 0.85)" stroke="#475569" stroke-width="1.2" />
+      <text x="105" y="26" text-anchor="middle" class="badge-text">💼 Enterprise &amp; SaaS</text>
+    </g>
+    <!-- Pill 2: Open Source -->
+    <g transform="translate(245, 0)">
+      <rect width="240" height="42" rx="21" fill="rgba(30, 41, 59, 0.85)" stroke="#6366f1" stroke-width="1.2" />
+      <text x="120" y="26" text-anchor="middle" class="badge-text">🔓 100% Self-Hosted &amp; OSS</text>
+    </g>
+    <!-- Pill 3: AI Agents -->
+    <g transform="translate(515, 0)">
+      <rect width="220" height="42" rx="21" fill="rgba(30, 41, 59, 0.85)" stroke="#ec4899" stroke-width="1.2" />
+      <text x="110" y="26" text-anchor="middle" class="badge-text">🤖 AI Agents &amp; Chatbots</text>
+    </g>
+  </g>
+
+  <!-- Subtle Bottom Border Accent -->
+  <rect x="0" y="356" width="1200" height="4" fill="url(#primaryGlow)" rx="2" />
+</svg>
